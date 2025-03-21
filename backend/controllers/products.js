@@ -4,10 +4,10 @@ import mongoose from "mongoose";
 
 export const createProduct = async (req, res)=>{
 
-    const { name, quantity, categoryId } = req.body;
+    const { name, quantity, categoryId, price } = req.body;
     
     // Validate required fields
-    if (!name || !quantity || !categoryId) {
+    if (!name || !quantity || !categoryId || !price) {
       return res.status(400).json({ message: 'All fields!! are reqiured image is optional' });
     }
 

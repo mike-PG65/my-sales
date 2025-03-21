@@ -64,13 +64,13 @@ export const UpdateUserPage: React.FC = () => {
 
 
   // Handle form input changes
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setUser((prevUser) => ({
-      ...prevUser,
-      [name]: value,
-    }));
-  };
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const { name, value } = e.target;
+  //   setUser((prevUser) => ({
+  //     ...prevUser,
+  //     [name]: value,
+  //   }));
+  // };
 
   // Handle confirm password field change
   const handleConfirmPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -121,7 +121,7 @@ export const UpdateUserPage: React.FC = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <div className="bg-gray-50 h-full flex flex-col items-center gap-6 py-4 relative">
+    <div className="bg-gray-50 h-[580px] flex flex-col items-center gap-6 py-4 relative">
         
       <h2 className="font-semibold text-2xl">{id? "Update User" : "Add New User"}</h2>
       <Link to="/users" >
