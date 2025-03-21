@@ -29,8 +29,8 @@ export const UpdateUserPage: React.FC = () => {
 
   const navigate = useNavigate();
 
-//   const [confirmPassword, setConfirmPassword] = useState<string>("");
-//   const [formError, setFormError] = useState<string | null>(null);
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
+  const [formError, setFormError] = useState<string | null>(null);
   const [message, setmesage] = useState('')
 
   // State for managing loading/error states
@@ -64,18 +64,18 @@ export const UpdateUserPage: React.FC = () => {
 
 
   // Handle form input changes
-//   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-//     const { name, value } = e.target;
-//     setUser((prevUser) => ({
-//       ...prevUser,
-//       [name]: value,
-//     }));
-//   };
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setUser((prevUser) => ({
+      ...prevUser,
+      [name]: value,
+    }));
+  };
 
   // Handle confirm password field change
-//   const handleConfirmPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-//     setConfirmPassword(e.target.value);
-//   };
+  const handleConfirmPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setConfirmPassword(e.target.value);
+  };
 
   // Handle form submission to update user
   const handleSubmit = async (e: React.FormEvent) => {

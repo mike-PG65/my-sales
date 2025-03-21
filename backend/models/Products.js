@@ -1,7 +1,7 @@
 // models/User.js
 import mongoose from'mongoose'
 
-const userSchema = new mongoose.Schema({
+const productSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -10,9 +10,9 @@ const userSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  category: {
-    type: String,
-    required: true,
+  categoryId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref:'Category'
   },
   image:{
     type: Buffer,
@@ -20,6 +20,6 @@ const userSchema = new mongoose.Schema({
   }
 });
 
-const Product = mongoose.model('Product', userSchema);
+const Product = mongoose.model('Product', productSchema);
 
 export default Product  
