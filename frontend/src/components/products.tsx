@@ -99,8 +99,8 @@ export const AddProductForm: React.FC = () => {
 
     try {
       if (id){
-      await axios.put(`http://localhost:7000/api/products/updateproduct/${id}`, product)
-      setSuccess("Product updated sucessfully")
+      const response =await axios.put(`http://localhost:7000/api/products/updateproduct/${id}`, product)
+      setSuccess(response.data.message)
       // setProduct(response.data)
       setTimeout(()=>{
         setSuccess(null);
@@ -110,9 +110,9 @@ export const AddProductForm: React.FC = () => {
      
 
       }else{
-         await axios.post("http://localhost:7000/api/products/add-product", product);            
+         const response = await axios.post("http://localhost:7000/api/products/add-product", product);            
           setLoading(false);  
-        setSuccess("Product addded successfully"); 
+        setSuccess(response.data.message); 
         // setProduct(response.data);
           setTimeout(()=>{
           setSuccess(null);
