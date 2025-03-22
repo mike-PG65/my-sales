@@ -6,6 +6,7 @@ import Sidebar from './components/home.tsx'
 import {Userlist} from './components/Userslist.tsx'
 import {UpdateUserPage} from './components/updateuser.tsx'
 import { AddProductForm } from './components/products.tsx'
+import {ProductsList} from './components/productsList.tsx'
 // import {Updateproduct} from './components/products.tsx'
 
 
@@ -18,11 +19,14 @@ function App() {
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/home" element={<Sidebar />} />
+          <Route path="/" element={<Sidebar />} />
           <Route path="/users" element={<Userlist />}/>
           <Route path="/updateuser/:id" element={<UpdateUserPage/>} />
           <Route path="/Adduser" element={<UpdateUserPage/>} />
           <Route path="/Addproduct" element={<AddProductForm/>} />
+          <Route path="/updateproduct/:id" element={<AddProductForm/>} />
+
+          <Route path="/productslist" element={<ProductsList/>} />
        </Routes>
       </BrowserRouter>
       

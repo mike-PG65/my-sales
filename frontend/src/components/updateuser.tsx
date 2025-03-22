@@ -83,7 +83,7 @@ export const UpdateUserPage: React.FC = () => {
 
     // Check if password and confirm password match
     if (user.password !== user.confirmPassword) {
-      setError("Passwords do not match.");
+      setError("Passwords do not match!!gggg");
       return;
     }
 
@@ -199,7 +199,7 @@ export const UpdateUserPage: React.FC = () => {
 
         
 
-        <button type="submit" className="bg-blue-200  py-2 rounded-full col-span-2">{id? "Update User" : "Add New User"}</button>
+        <button type="submit" className="bg-blue-200  py-2 rounded-full col-span-2">{id? "Update User" : "Add New User" }</button>
       </form>
       )}
       

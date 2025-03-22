@@ -14,6 +14,12 @@ export const createProduct = async (req, res)=>{
 
     try {
 
+        const existingProduct = await Product.findOne({ name, categoryId });
+
+        if (existingProduct) {
+            return res.status(409).json({ message: "Product already exists in this category!" });
+        }
+
         const newProduct = await Product.create(req.body);
 
         await newProduct.save()
@@ -32,7 +38,7 @@ export const createProduct = async (req, res)=>{
 export const getProducts = async(req, res)=>{
     try {
 
-    const products = await Product.find()
+    const products = await Product.find().populate("categoryId", "name")
     res.status(200).json(products);
         
     } catch (error) {
@@ -72,7 +78,7 @@ export const getProductById = async(req, res) =>{
 
 
 
-export const updateById = async (req, res) =>{
+export const updateProduct = async (req, res) =>{
     const { id } = req.params
     const {name, quantity, categoryId, price} = req.body
 
@@ -117,6 +123,8 @@ export const deleteProduct = async (req, res) =>{
         if (!mongoose.Types.ObjectId.isValid(id)){
             return res.status(400).json({message:"Invalid product ID format"})
         }
+
+        await Product.findByIdAndDelete(id)
 
         res.status(200).json({message:"Product deleted Successfully!!"})
         

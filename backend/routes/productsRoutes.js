@@ -1,4 +1,4 @@
-import { createProduct, getProducts, getProductById, updateById, deleteProduct} from "../controllers/products.js";
+import { createProduct, getProducts, getProductById, updateProduct, deleteProduct} from "../controllers/products.js";
 import express from 'express';
 
 const router = express.Router()
@@ -7,7 +7,7 @@ const router = express.Router()
 router.post('/add-product', createProduct)
 router.get('/products', getProducts)
 router.get('/product/:id', getProductById)
-router.put('/updateproduct/:id', updateById)
+router.put('/updateproduct/:id', updateProduct)
 router.delete('/deleteproduct/:id', deleteProduct)
 
 

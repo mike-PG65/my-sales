@@ -59,7 +59,7 @@ const Sidebar = () => {
                 </li>
                 <li>
                   <Link
-                    to="/users/add"
+                    to="/Adduser"
                     className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-200"
                   >
                     Add User
@@ -87,7 +87,7 @@ const Sidebar = () => {
                 </li>
 
                 <li>
-                  <Link to="/products/add" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-200"> Add product</Link>
+                  <Link to="/Addproduct" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-200"> Add product</Link>
                 </li>
               </ul>
             )}
