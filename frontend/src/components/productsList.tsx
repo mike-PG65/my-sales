@@ -76,9 +76,11 @@ if (error) return <p style={{ color: "red" }}>{error}</p>;
 
 
 return(
-    <div className="relative">
+    <div className="relative mt-6">
       <h1 className="text-xl font-semibold text-center">Product List</h1>
-
+      <Link to={"/Addproduct"}>
+      <button className="absolute right-4 bg-green-200 px-4 py-2 rounded-full font-medium text-white"> Add Product </button>
+</Link>
       {(success || error) && (
           <div className="absolute right-0 bg-green-100 p-8  rounded-lg mr-3 h-30">
             <div className="relative h-full p-4">
@@ -95,7 +97,7 @@ return(
       ) : (
 
        
-        <table className=" table-auto w-[90%]">
+        <table className=" table-auto w-screen mt-15">
           <thead className="">
             <tr className="bg-gray-50 border-b-2 border-gray-200 ">
               <th className="p-4 text-sm font-semibold tracking-wide text-center">Name</th>
@@ -112,11 +114,11 @@ return(
                 <td className="p-6 text-sm text-gray-700 text-center">{product.quantity}</td>
                 <td className="p-6 text-sm text-gray-700 text-center">{product.categoryId?.name}</td>
                 <td className="p-6 text-sm text-gray-700 text-center">Ksh. {product.price}</td>
-                <td className="flex gap-2 justify-center">
+                <td className="text-center">
 
                     <Link to={`/updateproduct/${product._id}`}>
                     <button
-                  className="px-4 py-2 text-white bg-blue-500 rounded-lg">
+                  className="px-4 py-2 text-white bg-blue-500 rounded-lg mr-6">
                     Update
 
                     </button>
