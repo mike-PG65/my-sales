@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import registerRoutes from './routes/userRoutes.js';
 import productRoutes from './routes/productsRoutes.js'
 import categoryRoutes from './routes/categoryRoutes.js'
+import supplierRoutes from './routes/supplierRoutes.js'
 import { connectDB } from './config/db.js';
 
 const app = express();
@@ -16,6 +17,7 @@ app.use(morgan("common"))
 app.use('/api', registerRoutes)
 app.use('/api/products', productRoutes)
 app.use('/api/categories', categoryRoutes)
+app.use('/api/suppliers', supplierRoutes)
 
 
 // connect to mongodb database

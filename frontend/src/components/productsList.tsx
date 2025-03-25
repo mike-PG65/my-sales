@@ -85,7 +85,7 @@ return(
           <div className="absolute right-0 bg-green-100 p-8  rounded-lg mr-3 h-30">
             <div className="relative h-full p-4">
 
-            <p className={`${error ? 'text-green-600' : 'text-red-500'}  font-bold mb-4 text-lg`}>
+            <p className={`${error ? 'text-green-600' : 'text-red-500'}  font-bold mb-4 text-lg font-(family-name:--)`}>
             {success || error}
           </p>
           <GiCrossMark className="absolute right-0 -top-5 cursor-pointer" onClick={toggleButton}/>

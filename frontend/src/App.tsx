@@ -7,6 +7,7 @@ import {Userlist} from './components/Userslist.tsx'
 import {UpdateUserPage} from './components/updateuser.tsx'
 import { AddProductForm } from './components/products.tsx'
 import {ProductsList} from './components/productsList.tsx'
+import { AddSupplier } from './components/suppliers.tsx'
 // import {Updateproduct} from './components/products.tsx'
 
 
@@ -25,7 +26,7 @@ function App() {
           <Route path="/Adduser" element={<UpdateUserPage/>} />
           <Route path="/Addproduct" element={<AddProductForm/>} />
           <Route path="/updateproduct/:id" element={<AddProductForm/>} />
-
+          <Route path="/addsupplier" element={<AddSupplier/>} />
           <Route path="/productslist" element={<ProductsList/>} />
        </Routes>
       </BrowserRouter>
